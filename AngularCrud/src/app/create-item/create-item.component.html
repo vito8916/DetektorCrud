@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{isEdit ? 'Editar' : 'Crear'}} Registro</h1>
+<form #userForm="ngForm">
+  <div mat-dialog-content class="create-container">
+    <mat-form-field>
+      <input matInput placeholder="motivo" name="motivo" [(ngModel)]="formData.motivo">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="des_motivo" name="des_motivo" [(ngModel)]="formData.des_motivo">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="estado" name="estado" [(ngModel)]="formData.estado">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="tipo" name="tipo" [(ngModel)]="formData.tipo">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button  (click)="createUser()" cdkFocusInitial>Guardar</button>
+  </div>
+</form>
