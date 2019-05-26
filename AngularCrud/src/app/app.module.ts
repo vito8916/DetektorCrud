@@ -16,6 +16,7 @@ import {
   MatDialogModule,
   MatSnackBarModule,
   MatBottomSheetModule,
+  MatSortModule,
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { ListItemComponent, ConfirmDialog } from './list-item/list-item.component';
@@ -47,7 +48,8 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     FormsModule,
     MatSnackBarModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatSortModule
   ],
   providers: [ApiServiceService],
   bootstrap: [AppComponent],

@@ -8,7 +8,7 @@
   <button class="fab-add" mat-fab (click)="addUser()" color="secundary">
     <mat-icon aria-label="Add">add</mat-icon>
   </button>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
     <!-- id Column -->
     <ng-container matColumnDef="motivo">
       <th mat-header-cell *matHeaderCellDef> motivo </th>
@@ -17,7 +17,7 @@
 
     <!-- nombres Column -->
     <ng-container matColumnDef="des_motivo">
-      <th mat-header-cell *matHeaderCellDef> des_motivo </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> des_motivo </th>
       <td mat-cell *matCellDef="let element"> {{element.des_motivo}} </td>
     </ng-container>
 

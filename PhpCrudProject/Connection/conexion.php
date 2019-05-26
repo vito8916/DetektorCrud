@@ -8,8 +8,8 @@ class Conexion {
         "host" => "localhost",
         "database" => "test",
         "port" => "3306",
-        "username" => "postgres",
-        "password" => "891606",
+        "username" => "root",
+        "password" => "root",
         "charset" => "utf8mb4"
     ];
 

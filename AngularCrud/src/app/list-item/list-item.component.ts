@@ -1,5 +1,12 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MatTableDataSource, MatDialog, MatSnackBar, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import {Component, OnInit, Inject, ViewChild} from '@angular/core';
+import {
+  MatTableDataSource,
+  MatDialog,
+  MatSnackBar,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MatSort
+} from '@angular/material';
 import { ApiServiceService, User } from '../api-service.service';
 import { CreateItemComponent } from '../create-item/create-item.component';
 
@@ -10,9 +17,11 @@ import { CreateItemComponent } from '../create-item/create-item.component';
 })
 export class ListItemComponent implements OnInit {
 
+
   constructor(private api: ApiServiceService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
   displayedColumns: string[] = ['motivo', 'des_motivo', 'estado', 'tipo', 'actions'];
   dataSource;
+  @ViewChild(MatSort) sort: MatSort;
 
   ngOnInit(): void {
     this.fetchUsers()
@@ -20,6 +29,7 @@ export class ListItemComponent implements OnInit {
   fetchUsers() {
     this.api.getUsers().subscribe((data: User[]) => {
       this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
     })
   }
 
