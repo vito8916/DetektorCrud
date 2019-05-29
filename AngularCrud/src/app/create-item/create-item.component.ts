@@ -8,7 +8,7 @@ import { ApiServiceService } from '../api-service.service';
   styleUrls: ['./create-item.component.scss']
 })
 export class CreateItemComponent implements OnInit {
-  formData = new UserBuilder('', '', '', '', 0)
+  formData = new UserBuilder('', '', '', 0);
   isEdit = false
   constructor(
     private api: ApiServiceService,
